@@ -2,10 +2,10 @@ package com.company;
 
 public class Book {
     String name;
-    String bookAuthor;
+    Author bookAuthor;
     int publishDate;
 
-    public Book(String name, int publishDate, String bookAuthor) {
+    public Book(String name, int publishDate, Author bookAuthor) {
     this.bookAuthor =bookAuthor;
     this.publishDate = publishDate;
     this.name = name;
@@ -14,7 +14,7 @@ public class Book {
        return this.name;
     }
 
-    public String getBookAuthor() {
+    public Author getBookAuthor() {
         return this.bookAuthor;
     }
 

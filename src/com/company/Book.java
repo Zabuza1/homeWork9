@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Book {
     String name;
     Author bookAuthor;
@@ -28,5 +30,18 @@ public class Book {
     }
     public String toString() {
         return "[" + this.name + ". " + this.bookAuthor.toString() + ". " + this.publishDate + "]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publishDate == book.publishDate;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(publishDate);
     }
 }

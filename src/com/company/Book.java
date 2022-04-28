@@ -37,11 +37,12 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return publishDate == book.publishDate;
+        return publishDate == book.publishDate && name.equals(book.name)
+                && bookAuthor.equals(book.bookAuthor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishDate);
+        return Objects.hash(name, bookAuthor, publishDate);
     }
 }
